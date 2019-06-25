@@ -24,17 +24,17 @@ function x (){
     if (username === currentUser.name &&
         password === currentUser.password
     ){
-        console.log('Login sucess')
+        window.location = 'yeup.html'
     } else {
-        console.log('Login failed')
+        window.location = 'nope.html'
     }   
 }
 
-// document.getElementById('login').addEventListener('click', x);
-document.getElementById('userName','password').addEventListener('keyup', function(e){
-    if (e.keycode === 13) {
-        document.getElementById('login').click();
-    }
-});
+document.getElementById('login').addEventListener('click', x);
+// document.getElementById('userName','password').addEventListener('keyup', function(e){
+//     if (e.keycode === 13) {
+//         document.getElementById('login').click();
+//     }
+// });
 
 
