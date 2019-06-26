@@ -9,7 +9,7 @@ const users = [
     }
 ]
 
-function x (){
+function clickLogin (){
     let username = document.getElementById('userName').value;
     let password = document.getElementById('password').value;
     let currentUser = users.find(function(user){
@@ -32,13 +32,13 @@ function x (){
     }   
 }
 
-function enterKey (e){
-    if (e.keyCode == 13) {
+function enterKeyLogin (event){
+    if (event.keyCode === 13) {
         window.location = 'yeup.html'
-    } 
+    };
 }
 
-document.getElementById('login').addEventListener('click', x);
-document.getElementById('password').addEventListener('keydown', enterKey);
+document.getElementById('login').addEventListener('click', clickLogin);
+document.getElementById('password').addEventListener('keydown', enterKeyLogin);
 
 
