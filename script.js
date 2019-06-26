@@ -33,9 +33,16 @@ function clickLogin (){
 }
 
 function enterKeyLogin (event){
-    if (event.keyCode === 13) {
+    let username = document.getElementById('userName').value;
+    let password = document.getElementById('password').value;
+    let currentUser = users.find(function(user){
+        return user.name === username;
+    })
+    if (username === currentUser.name &&
+        password === currentUser.password &&
+        event.keyCode === 13) {
         window.location = 'yeup.html'
-    };
+    }
 }
 
 document.getElementById('login').addEventListener('click', clickLogin);
