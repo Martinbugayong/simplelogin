@@ -10,17 +10,19 @@ const users = [
 ]
 
 function x (){
-    var username = document.getElementById('userName').value;
-    var password = document.getElementById('password').value;
-    var currentUser = users.find(function(user){
+    let username = document.getElementById('userName').value;
+    let password = document.getElementById('password').value;
+    let currentUser = users.find(function(user){
         return user.name === username;
     })
-    // the higherorder function ".find" a method in JS is the same as the forloop below
-    // for (i = 0; i < users.length; i++) {
-    //     if (username === users[i].name) {
-    //         currentUser = users[i]
-    //     }
-    // }
+    /* the higherorder function ".find" a method in JS. it is the same as the forloop below
+
+    for (i = 0; i < users.length; i++) {
+        if (username === users[i].name) {
+            currentUser = users[i]
+        }
+    }
+    */
     if (username === currentUser.name &&
         password === currentUser.password
     ){
@@ -30,11 +32,13 @@ function x (){
     }   
 }
 
+function enterKey (e){
+    if (e.keyCode == 13) {
+        window.location = 'yeup.html'
+    } 
+}
+
 document.getElementById('login').addEventListener('click', x);
-// document.getElementById('userName','password').addEventListener('keyup', function(e){
-//     if (e.keycode === 13) {
-//         document.getElementById('login').click();
-//     }
-// });
+document.getElementById('password').addEventListener('keydown', enterKey);
 
 
