@@ -43,11 +43,9 @@ function enterKeyLogin (event){
         event.keyCode === 13) {
             window.location = 'yeup.html'
     } else if (
-        username !== currentUser.name && 
+        username !== currentUser.name || 
         password !== currentUser.password &&
         event.keyCode === 13) {
-            window.location = 'nope.html'
-        } else {
             window.location = 'nope.html'
         }
 }
